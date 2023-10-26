@@ -1,0 +1,16 @@
+
+/*/**/bin/Debug
+/*/**/bin/Release
+/*/**/obj/Debug
+/*/**/obj/Release
+/*/**/bin
+/*/**/obj
+.idea
+.vscode
+
+/**/Log
+
+**/obj
+**/bin
+
+*.blob
