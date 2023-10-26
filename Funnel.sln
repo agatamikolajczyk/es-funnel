@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Funnel", "Funnel", "{AC21B93C-801E-4394-8A31-1C8D4A9FDBA1}"
+	ProjectSection(SolutionItems) = preProject
+		Funnel\.gitignore = Funnel\.gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30027DE0-B57F-434E-96F7-A17AE5A7F649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funnel.Api", "Funnel\src\Funnel.Api\Funnel.Api.csproj", "{26D3E41B-8322-45F4-B5D8-65D884B907AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funnel.Core", "Funnel\src\Funnel.Core\Funnel.Core.csproj", "{82EDDA93-506C-4116-A418-6E4FD8F0ECA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funnel.EventsStore", "Funnel\src\Funnel.EventsStore\Funnel.EventsStore.csproj", "{DB5B1E94-A821-4136-9337-A0E535F61F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funnel.Tools", "Funnel\src\Funnel.Tools\Funnel.Tools.csproj", "{7379300D-086B-4DDC-80B6-325345057858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3F9802A6-F43C-4F13-9920-6CF792E7C2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funnel.Tests", "Funnel\Funnel.Tests\Funnel.Tests.csproj", "{7C4744A2-7399-4D53-84B6-77F489B0DD16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26D3E41B-8322-45F4-B5D8-65D884B907AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D3E41B-8322-45F4-B5D8-65D884B907AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D3E41B-8322-45F4-B5D8-65D884B907AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D3E41B-8322-45F4-B5D8-65D884B907AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82EDDA93-506C-4116-A418-6E4FD8F0ECA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82EDDA93-506C-4116-A418-6E4FD8F0ECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82EDDA93-506C-4116-A418-6E4FD8F0ECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82EDDA93-506C-4116-A418-6E4FD8F0ECA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB5B1E94-A821-4136-9337-A0E535F61F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5B1E94-A821-4136-9337-A0E535F61F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5B1E94-A821-4136-9337-A0E535F61F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5B1E94-A821-4136-9337-A0E535F61F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7379300D-086B-4DDC-80B6-325345057858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7379300D-086B-4DDC-80B6-325345057858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7379300D-086B-4DDC-80B6-325345057858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7379300D-086B-4DDC-80B6-325345057858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4744A2-7399-4D53-84B6-77F489B0DD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4744A2-7399-4D53-84B6-77F489B0DD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4744A2-7399-4D53-84B6-77F489B0DD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4744A2-7399-4D53-84B6-77F489B0DD16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30027DE0-B57F-434E-96F7-A17AE5A7F649} = {AC21B93C-801E-4394-8A31-1C8D4A9FDBA1}
+		{26D3E41B-8322-45F4-B5D8-65D884B907AC} = {30027DE0-B57F-434E-96F7-A17AE5A7F649}
+		{82EDDA93-506C-4116-A418-6E4FD8F0ECA0} = {30027DE0-B57F-434E-96F7-A17AE5A7F649}
+		{DB5B1E94-A821-4136-9337-A0E535F61F69} = {30027DE0-B57F-434E-96F7-A17AE5A7F649}
+		{7379300D-086B-4DDC-80B6-325345057858} = {30027DE0-B57F-434E-96F7-A17AE5A7F649}
+		{3F9802A6-F43C-4F13-9920-6CF792E7C2B2} = {AC21B93C-801E-4394-8A31-1C8D4A9FDBA1}
+		{7C4744A2-7399-4D53-84B6-77F489B0DD16} = {3F9802A6-F43C-4F13-9920-6CF792E7C2B2}
+	EndGlobalSection
+EndGlobal
