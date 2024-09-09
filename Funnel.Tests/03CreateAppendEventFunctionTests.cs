@@ -46,7 +46,7 @@ public class CreateAppendEventFunctionTests
     public void AppendEventFunction_WhenStreamDoesNotExist_CreateNewStream_And_AppendNewEvent()
     {
         var streamId = Guid.NewGuid();
-        var @event = new CartCreated(streamId, "John Doe");
+        var @event = new CartCreated(streamId, "krzysztof.jarzyna");
 
         var result = eventStore.AppendEvent<Cart>(streamId, @event);
 

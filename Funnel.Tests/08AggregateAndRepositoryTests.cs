@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Funnel.Core;
+using Funnel.Core.Carts;
 using Funnel.EventsStore;
 using Funnel.Tools.Tools;
 using Npgsql;
@@ -11,7 +12,7 @@ public class AggregateAndRepositoryTests
 {
     private readonly NpgsqlConnection databaseConnection;
     private readonly EventStore eventStore;
-    private readonly IRepository<User> repository;
+    private readonly IRepository<Cart> repository;
 
     public AggregateAndRepositoryTests()
     {
@@ -23,7 +24,7 @@ public class AggregateAndRepositoryTests
         // Initialize Event Store
         eventStore.Init();
 
-        repository = new Repository<User>(eventStore);
+        repository = new Repository<Cart>(eventStore);
     }
     
     [Fact]
@@ -31,24 +32,24 @@ public class AggregateAndRepositoryTests
     public void Repository_FullFlow_ShouldSucceed()
     {
         var streamId = Guid.NewGuid();
-        var user = new User(streamId, "John Doe");
+        var cart = new Cart(streamId, "krzysztof.jarzyna");
 
-        repository.Add(user);
+        repository.Add(cart);
 
-        var userFromRepository = repository.Find(streamId);
+        var cartFromRepository = repository.Find(streamId);
 
-        userFromRepository.Id.Should().Be(streamId);
-        userFromRepository.Name.Should().Be("John Doe");
-        userFromRepository.Version.Should().Be(1);
+        cartFromRepository.Id.Should().Be(streamId);
+        cartFromRepository.Username.Should().Be("krzysztof.jarzyna");
+        cartFromRepository.Version.Should().Be(1);
 
-        userFromRepository.ChangeName("Adam Smith");
+        cartFromRepository.SetPaymentMethod("BLIK");
 
-        repository.Update(userFromRepository);
+        repository.Update(cartFromRepository);
 
         var userAfterUpdate = repository.Find(streamId);
 
         userAfterUpdate.Id.Should().Be(streamId);
-        userAfterUpdate.Name.Should().Be("Adam Smith");
-        userFromRepository.Version.Should().Be(2);
+        userAfterUpdate.PaymentMethod.Should().Be("BLIK");
+        cartFromRepository.Version.Should().Be(2);
     }
 }

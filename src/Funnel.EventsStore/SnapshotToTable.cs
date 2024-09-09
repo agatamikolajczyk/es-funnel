@@ -19,5 +19,6 @@ public class SnapshotToTable<T>: ISnapshot
     public void Handle(IAggregate aggregate)
     {
         databaseConnection.Execute(upsertSql, aggregate);
+        databaseConnection.Execute(upsertSql, aggregate);
     }
 }

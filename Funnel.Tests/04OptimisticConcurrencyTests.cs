@@ -1,5 +1,7 @@
 using Dapper;
 using FluentAssertions;
+using Funnel.Core.Carts;
+using Funnel.Core.Carts.Events;
 using Funnel.Tools.Tools;
 using Npgsql;
 using Xunit;
@@ -8,14 +10,6 @@ namespace Funnel.Tests;
 
 public class OptimisticConcurrencyTests
 {
-    public record User(
-        string Name
-    );
-
-    public record UserCreated(
-        string Name
-    );
-
     private readonly NpgsqlConnection databaseConnection;
     private readonly PostgresSchemaProvider schemaProvider;
     private readonly EventsStore.EventStore eventStore;
@@ -52,9 +46,9 @@ public class OptimisticConcurrencyTests
     public void AppendEventFunction_WhenStreamDoesNotExist_CreateNewStream_And_AppendNewEvent()
     {
         var streamId = Guid.NewGuid();
-        var @event = new UserCreated("John Doe");
+        var @event = new CartCreated(streamId, "krzysztof.jarzyna");
 
-        var result = eventStore.AppendEvent<User>(streamId, @event);
+        var result = eventStore.AppendEvent<Cart>(streamId, @event);
 
         result.Should().BeTrue();
 
