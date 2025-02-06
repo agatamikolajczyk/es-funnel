@@ -1,4 +1,5 @@
 using FluentAssertions;
+using Funnel.Tests.Tools;
 using Funnel.Tools.Tools;
 using Npgsql;
 using Xunit;
@@ -24,7 +25,7 @@ public class CreateEventsTableTests: IDisposable
     /// </summary>
     public CreateEventsTableTests()
     {
-        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection();
+        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection(Settings.ConnectionString);
         schemaProvider = new PostgresSchemaProvider(databaseConnection);
 
         // Create Event Store

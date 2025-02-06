@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Funnel.Core.Carts;
 using Funnel.Core.Carts.Events;
+using Funnel.Tests.Tools;
 using Funnel.Tools.Tools;
 using Npgsql;
 using Xunit;
@@ -17,7 +18,7 @@ public class EventStoreMethodsTests
     /// </summary>
     public EventStoreMethodsTests()
     {
-        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection();
+        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection(Settings.ConnectionString);
 
         // Create Event Store
         eventStore = new EventsStore.EventStore(databaseConnection);

@@ -4,6 +4,7 @@ using Dapper.Contrib.Extensions;
 using FluentAssertions;
 using Funnel.Core.Carts;
 using Funnel.EventsStore;
+using Funnel.Tests.Tools;
 using Funnel.Tools.Tools;
 using Npgsql;
 using SimpleMigrations;
@@ -42,7 +43,7 @@ public class SnapshotsTests
     /// </summary>
     public SnapshotsTests()
     {
-        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection();
+        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection(Settings.ConnectionString);
 
         var databaseProvider =
             new PostgresqlDatabaseProvider(databaseConnection)

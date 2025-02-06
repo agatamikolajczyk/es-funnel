@@ -2,6 +2,7 @@ using FluentAssertions;
 using Funnel.Core;
 using Funnel.Core.Carts;
 using Funnel.EventsStore;
+using Funnel.Tests.Tools;
 using Funnel.Tools.Tools;
 using Npgsql;
 using Xunit;
@@ -16,7 +17,7 @@ public class AggregateAndRepositoryTests
 
     public AggregateAndRepositoryTests()
     {
-        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection();
+        databaseConnection = PostgresDbConnectionProvider.GetFreshDbConnection(Settings.ConnectionString);
 
         // Create Event Store
         eventStore = new EventStore(databaseConnection);
